@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="OpenShare.Modules.CreateNoteModule"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OpenShare.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+
+        <!-- textdata title -->
+
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="40"
+            Style="{StaticResource InputHeader}"
+            Text="Text: "
+            VerticalAlignment="Bottom"
+        />
+
+        <!-- itemname -->
+        <Grid Grid.Row="0" Grid.Column="1" Margin="40">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                Style="{StaticResource InputHeader}"
+                Text="Title: "
+                VerticalAlignment="Bottom"
+            />
+    
+            <TextBox Grid.Row="1"
+                Text="{Binding Name}"
+            />
+        </Grid>
+
+        <!-- textdata -->
+     
+
+            <TextBox Grid.Row="1" Grid.Column="0" Margin="40"
+                Text="{Binding TextData}"
+            />
+            <!-- Buttons -->
+        <Grid Grid.Row="1" Grid.Column="1" Margin="40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="10 0 0 0"
+                Content="ADD"
+                Command="{Binding AddCommand}"
+                CommandParameter="DRAWER"
+            />
+
+            <Button Grid.Column="1" Margin="10 0 0 0"
+                Content="CANCEL"
+                Command="{Binding CancelCommand}"
+                CommandParameter="DRAWER"
+            />
+        </Grid>
+    </Grid>
+</UserControl>
